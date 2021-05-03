@@ -41,7 +41,7 @@ class Master extends Authenticatable
     ];
 
     /**
-     *　利用者一覧と当月の実績データと実績表に必要なデータを取得
+     * 利用者一覧と当月の実績データと実績表に必要なデータを取得
      * @pahram Request $request
      * @return void
      * 在籍校別で利用者情報を取得する
@@ -178,7 +178,7 @@ class Master extends Authenticatable
 
     /**
      * 今月から過去1年間の月を取得
-     * 
+     *
      * @return void
      */
     public function Months(Request $request)
@@ -206,7 +206,7 @@ class Master extends Authenticatable
         return $months;
     }
 
-        /**
+    /**
      * 今月から過去1年間の月を取得
      *
      * @return void
@@ -220,13 +220,12 @@ class Master extends Authenticatable
         for ($i = 0; $i < 12; $i++) {
             $months[$i] = $bmonth->copy()->subMonth($i);
         }
-        
         return $months;
     }
 
     /**
      * Excelの日付、曜日、サービス提供欄出力用の連想配列を作成
-     * 
+     *
      */
     public function Excel_Days(Request $request)
     {

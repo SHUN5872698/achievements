@@ -32,7 +32,7 @@ class AchievementController extends Controller
         $months = new Achievement();
         $months = $months->Months($request);
 
-        //利用者の当日の実績データを取得 
+        //利用者の当日の実績データを取得
         $one_record = new Achievement();
         $one_record = $one_record->One_Record($request);
 
@@ -59,7 +59,7 @@ class AchievementController extends Controller
      */
     public function new_record(Request $request)
     {
-        //利用者の今日の実績データを検索 
+        //利用者の今日の実績データを検索
         $one_record = new Achievement();
         $one_record = $one_record->One_Record($request);
 
@@ -104,7 +104,7 @@ class AchievementController extends Controller
      */
     public function food_up(Request $request)
     {
-        //利用者の今日の実績データを検索 
+        //利用者の今日の実績データを検索
         $one_record = new Achievement();
         $one_record = $one_record->One_Record($request);
 
@@ -126,7 +126,7 @@ class AchievementController extends Controller
      */
     public function outside_up(Request $request)
     {
-        //利用者の今日の実績データを検索 
+        //利用者の今日の実績データを検索
         $one_record = new Achievement();
         $one_record = $one_record->One_Record($request);
 
@@ -148,7 +148,7 @@ class AchievementController extends Controller
      */
     public function medical_up(Request $request)
     {
-        //利用者の今日の実績データを検索 
+        //利用者の今日の実績データを検索
         $one_record = new Achievement();
         $one_record = $one_record->One_Record($request);
 
@@ -170,7 +170,7 @@ class AchievementController extends Controller
      */
     public function note_up(Request $request)
     {
-        //利用者の今日の実績データを検索 
+        //利用者の今日の実績データを検索
         $one_record = new Achievement();
         $one_record = $one_record->One_Record($request);
 
@@ -230,12 +230,12 @@ class AchievementController extends Controller
             $month = new Carbon($request->insert_date);
             $month = $month->firstOfMonth();
             $request->merge(['insert_date' => $month]);
-    
+
             //利用者の当月の実績データを取得
             $data = new Master();
             $data = $data->DRecords($request);
-    
-            //実績閲覧ページにリダイレクト   
+
+            //実績閲覧ページにリダイレクト
             return view('master.master_index', $data);
         }
     }
@@ -287,7 +287,7 @@ class AchievementController extends Controller
         $data = new Master();
         $data = $data->DRecords($request);
 
-        //実績閲覧ページにリダイレクト   
+        //実績閲覧ページにリダイレクト
         return view('master.master_index', $data);
     }
 
@@ -307,7 +307,7 @@ class AchievementController extends Controller
         } else {
             //存在していた場合削除処理を実行
             $achievement->delete();
-            //実績閲覧ページにリダイレクト   
+            //実績閲覧ページにリダイレクト
             return back();
         }
     }

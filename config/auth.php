@@ -15,6 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
+        // 'passwords' => 'users',
         'passwords' => 'masters',
     ],
 
@@ -38,11 +39,13 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
+            // 'provider' => 'users',
             'provider' => 'masters',
         ],
 
         'api' => [
             'driver' => 'token',
+            // 'provider' => 'users',
             'provider' => 'masters',
             'hash' => false,
         ],
@@ -93,7 +96,7 @@ return [
     */
 
     'passwords' => [
-        'users' => [
+        'masters' => [
             'provider' => 'masters',
             'table' => 'password_resets',
             'expire' => 60,
